@@ -1,37 +1,40 @@
-# tictactoe-vuejs
+# tictactoe-vue
 
 
-Skapat med vue-cli.
+
+All källkod finns under /src/
+Startar i main.js -> App.vue -> Game.vue
+Ändringar görs alltså i /src/component/ där du börjar med Game.vue.
+Spelmotorn under /src/engine/ skall ej ändras.
 
 
-## Project setup
+Skapat med vue-cli ("vue create projnamn")
+
+
+## Installera beroende paket (första gången)
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Utvecklingsserver - bygger och gör hot-reloads vid ändringar
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Bygger och minifierar för produktion
 ```
 npm run build
 ```
 
-### Run your tests
+### Kör tester
 ```
-npm run test
+npm run test:unit
+npm run test:unit-watch
 ```
 
 ### Lints and fixes files
 ```
 npm run lint
-```
-
-### Run your unit tests
-```
-npm run test:unit
 ```
 
 ### Customize configuration

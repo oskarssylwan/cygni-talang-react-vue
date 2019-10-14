@@ -18,20 +18,23 @@ class Game extends React.Component {
 
     return (
       <div className="game">
+        {/* Board component */}
         <div className="game-board">
-
           <div>
             <div className="board-row">
+              {/* Square components */}
               <button type="submit" className="square"></button>
               <button type="submit" className="square">X</button>
               <button type="submit" className="square"></button>
             </div>
             <div className="board-row">
+              {/* Square components */}
               <button type="submit" className="square"></button>
               <button type="submit" className="square"></button>
               <button type="submit" className="square"></button>
             </div>
             <div className="board-row">
+              {/* Square components */}
               <button type="submit" className="square"></button>
               <button type="submit" className="square"></button>
               <button type="submit" className="square"></button>
@@ -41,7 +44,6 @@ class Game extends React.Component {
 
         <div className="game-info">
           <div>{status}</div>
-
         </div>
       </div>
     );

@@ -1,7 +1,7 @@
 # Tic Tac Toe - React
 
 This is a variant of the [offcial React Tic Tac Toe tutorial](https://reactjs.org/tutorial/tutorial.html).
-But at &lt;/salt&gt; we are turning it up a notch, so you will develop the game using TDD practices and 
+But at </salt> we are turning it up a notch, so you will develop the game using TDD practices and 
 linter rules based on the Airbnb config.
 
 
@@ -9,40 +9,40 @@ linter rules based on the Airbnb config.
 
 The resulting HTML for this game should look something like this
 ```html
-&lt;!-- Game component --&gt;
-&lt;div class="game"&gt;
-  &lt;div class="game-board"&gt;
-    &lt;!-- Board component --&gt;
-    &lt;div&gt;
-      &lt;div class="board-row"&gt;
-        &lt;!-- Square components --&gt;
-        &lt;button type="submit" class="square"&gt;&lt;/button&gt;
-        &lt;button type="submit" class="square"&gt;&lt;/button&gt;
-        &lt;button type="submit" class="square"&gt;&lt;/button&gt;
-      &lt;/div&gt;
-      &lt;div class="board-row"&gt;
-        &lt;!-- Square components --&gt;
-        &lt;button type="submit" class="square"&gt;&lt;/button&gt;
-        &lt;button type="submit" class="square"&gt;&lt;/button&gt;
-        &lt;button type="submit" class="square"&gt;&lt;/button&gt;
-      &lt;/div&gt;
-      &lt;div class="board-row"&gt;
-        &lt;!-- Square components --&gt;
-        &lt;button type="submit" class="square"&gt;&lt;/button&gt;
-        &lt;button type="submit" class="square"&gt;&lt;/button&gt;
-        &lt;button type="submit" class="square"&gt;&lt;/button&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="game-info"&gt;
-    &lt;div&gt;Next player: X&lt;/div&gt;
-    &lt;ol&gt;
-      &lt;li&gt;
-        &lt;button type="submit"&gt;Go to game start&lt;/button&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+<!-- Game component -->
+<div class="game">
+  <div class="game-board">
+    <!-- Board component -->
+    <div>
+      <div class="board-row">
+        <!-- Square components -->
+        <button type="submit" class="square"></button>
+        <button type="submit" class="square"></button>
+        <button type="submit" class="square"></button>
+      </div>
+      <div class="board-row">
+        <!-- Square components -->
+        <button type="submit" class="square"></button>
+        <button type="submit" class="square"></button>
+        <button type="submit" class="square"></button>
+      </div>
+      <div class="board-row">
+        <!-- Square components -->
+        <button type="submit" class="square"></button>
+        <button type="submit" class="square"></button>
+        <button type="submit" class="square"></button>
+      </div>
+    </div>
+  </div>
+  <div class="game-info">
+    <div>Next player: X</div>
+    <ol>
+      <li>
+        <button type="submit">Go to game start</button>
+      </li>
+    </ol>
+  </div>
+</div>
 ```
 
 To achive this, we build the UI of three components, `Game`, `Board` and `Square`.

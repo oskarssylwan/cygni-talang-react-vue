@@ -22,6 +22,22 @@ En impl. av spelmotor (engine.js) finns i båda katalogerna (samma kod) att impo
 (redangjort i sklettkoden ni fått)
 Se /src/game/engine.js och engine.test.js för att se hur den fungerar.
 
+### Psuedokod för hur spelmotorn används
+
+```js
+import { calculateWinner, currentMove, initialState, move } from '@/engine/engine';
+
+// Skapa initialtillståndet
+state = initialState();
+// I state finns squares - array med 9 st rutor i en array "history"
+
+// Hämta nuvarande state 
+state = currentMove();
+
+// Gör ett drag på position "pos"   
+nextState = move(position, state);
+
+```
 
 ## Spelet som HTML.
 

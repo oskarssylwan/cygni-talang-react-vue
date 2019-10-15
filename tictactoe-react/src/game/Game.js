@@ -7,14 +7,16 @@ import {
 class Game extends React.Component {
   constructor(props) {
     super(props);
-    this.state = initialState();
+    this.state = {
+      squares: [null, null, null,  null, null, null,  null, null, null],
+    };
   }
 
   render() {
 
-    const current = currentMove(this.state);
+    const current = {}; // ... hämta state
 
-    let status = `Next player: 'X'`;
+    let status = `Next player: 'X'`; // eller "Winner is: X/O", eller överkurs: "It's a draw!"
 
     return (
       <div className="game">

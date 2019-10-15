@@ -56,7 +56,8 @@ export default {
   },
   computed: {
     status() { // Notera: computed methods accessas utan invokering "()", dvs bara "status" inte "status()"
-      return 'Next player: X';
+
+      return 'Next player: X'; // eller "Winner is: X/O", eller överkurs: "It's a draw!"
     },
   },
 };

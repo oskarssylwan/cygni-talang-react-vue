@@ -3,8 +3,9 @@
 
 ## Tic-tac-toe med React och Vue.js
 
-Vi utgår från denna React-tutorial [offcial React Tic Tac Toe tutorial](https://reactjs.org/tutorial/tutorial.html).
-Ni skall med hjälp av en färdig spelmotor skapa tic-tac-toe-appen i både React och sedan Vue.js
+Vi har utgått från appen som finns i denna React-tutorial [offcial React Tic Tac Toe tutorial](https://reactjs.org/tutorial/tutorial.html).
+"Spelmotorn" "engine.js" har vi frikopplat och används som en modul.
+Ni skall med hjälp av denna spelmotor implementera Tic-tac-toe-appen i både React och sedan Vue.js
 
 
 ## Övning 1
@@ -19,7 +20,7 @@ Se README.md i den katalogen.
 
 ## Spelmotorn
 En impl. av spelmotor (engine.js) finns i båda katalogerna (samma kod) att importera från apparna.
-(redangjort i sklettkoden ni fått)
+(redan gjort i sklettkoden ni fått)
 Se /src/game/engine.js och engine.test.js för att se hur den fungerar.
 
 ### Psuedokod för hur spelmotorn används
@@ -31,8 +32,8 @@ import { calculateWinner, currentMove, initialState, move } from '@/engine/engin
 state = initialState();
 // I state finns squares - array med 9 st rutor i en array "history"
 
-// Hämta nuvarande state 
-state = currentMove();
+// Hämta nuvarande "move" { squares: ['X', null, 'O', ....] }  
+currentMove = currentMove(state);
 
 // Gör ett drag på position "pos"   
 nextState = move(position, state);

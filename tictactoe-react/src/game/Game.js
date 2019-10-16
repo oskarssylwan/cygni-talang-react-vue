@@ -1,55 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Game.css';
 import {
   initialState, calculateWinner, currentMove, move, jumpTo,
 } from './engine';
+import { Board } from './widgets/Board'
 
-class Game extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      squares: [null, null, null,  null, null, null,  null, null, null],
-    };
-  }
 
-  render() {
+const Game = () => {
+  const [state, setState] = useState(initialState())
+  const onMove = index => setState(move(index, state))
+  const current = state.history[state.history.length-1];
+  const winner = calculateWinner(current.squares)
 
-    const current = {}; // ... hämta state
+  let status = winner
+    ? `Winner is ${winner}`
+    : `Current player: ${state.xIsNext ? 'X' : 'O'}`;
 
-    let status = `Next player: 'X'`; // eller "Winner is: X/O", eller överkurs: "It's a draw!"
-
-    return (
-      <div className="game">
-        {/* Board component */}
-        <div className="game-board">
-          <div>
-            <div className="board-row">
-              {/* Square components */}
-              <button type="submit" className="square"></button>
-              <button type="submit" className="square">X</button>
-              <button type="submit" className="square"></button>
-            </div>
-            <div className="board-row">
-              {/* Square components */}
-              <button type="submit" className="square"></button>
-              <button type="submit" className="square"></button>
-              <button type="submit" className="square"></button>
-            </div>
-            <div className="board-row">
-              {/* Square components */}
-              <button type="submit" className="square"></button>
-              <button type="submit" className="square"></button>
-              <button type="submit" className="square"></button>
-            </div>
-          </div>
-        </div>
-
-        <div className="game-info">
-          <div>{status}</div>
-        </div>
+  return (
+    <div className="game">
+      <Board squares={current.squares} move={onMove}/>
+      <div className="game-info">
+        <div>{status}</div>
       </div>
-    );
-  }
+    </div>
+  )
 }
 
 export default Game;

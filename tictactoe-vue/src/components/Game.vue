@@ -1,33 +1,13 @@
 <template>
   <div class="game">
-    <div class="game-board">
 
       <!-- Board -->
-      <div>
-        <div class="board-row">
-          <!-- Square -->
-          <button type="submit" class="square"></button>
-          <!-- Square -->
-          <button type="submit" class="square">X</button>
-          <!-- Square -->
-          <button type="submit" class="square"></button>
-        </div>
-        <div class="board-row">
-          <button type="submit" class="square"></button>
-          <button type="submit" class="square"></button>
-          <button type="submit" class="square"></button>
-        </div>
-        <div class="board-row">
-          <button type="submit" class="square"></button>
-          <button type="submit" class="square"></button>
-          <button type="submit" class="square"></button>
-        </div>
-      </div>
-
-    </div>
+      <Board @clickedSquare="handleClick" :currentBoard="currentBoard"/>
 
     <div class="game-info">
       <div>{{status}}</div>
+      <div>{{currentBoard}}</div>
+
     </div>
 
   </div>
@@ -53,11 +33,24 @@ export default {
     };
   },
   methods: {
+    handleClick(id) {
+      const newState = move(id, this.state) 
+      if (newState) {
+        this.state = newState
+      }
+    }
   },
   computed: {
-    status() { // Notera: computed methods accessas utan invokering "()", dvs bara "status" inte "status()"
+    currentBoard() {
+      return currentMove(this.state).squares;
+    },
 
-      return 'Next player: X'; // eller "Winner is: X/O", eller överkurs: "It's a draw!"
+    status() { // Notera: computed methods accessas utan invokering "()", dvs bara "status" inte "status()"
+      const winner = calculateWinner(this.currentBoard)
+      if (winner) {
+        return `Winner is ${winner}`
+      }
+      return `Next player: ${this.state.xIsNext ? 'X': 'O'}`; // eller "Winner is: X/O", eller överkurs: "It's a draw!"
     },
   },
 };
@@ -75,29 +68,5 @@ export default {
     margin-left: 20px;
   }
 
-  .board-row:after {
-   clear: both;
-   content: "";
-   display: table;
-  }
-
-  .square {
-    background: #fff;
-    border: 1px solid #999;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 34px;
-  }
-
-  .square:focus {
-    outline: none;
-  }
 
 </style>

@@ -1,8 +1,7 @@
 import React from 'react';
 import './Square.css';
 
-class Square extends React.Component {
-
-}
-
-export default Square;
+export const Square = ({move, index, children}) =>
+  <button onClick={() => move(index)} type="submit" className="square">
+    {children}
+  </button>
